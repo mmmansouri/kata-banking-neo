@@ -6,5 +6,5 @@ Feature: Deposit an amount of money into personal account
 
   Scenario: Successful deposit
     Given a bank client Account
-    When  the client ask to deposit Money
-    Then  the Account is credited with the given amount of Money
+    When  the client ask to deposit 10
+    Then  the Account is credited with the given 10 of Money

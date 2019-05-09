@@ -14,6 +14,8 @@ repositories {
 }
 
 dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test','io.cucumber:cucumber-java:4.3.0','io.cucumber:cucumber-junit:4.3.0'
 }
