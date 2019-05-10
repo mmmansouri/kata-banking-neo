@@ -1,4 +1,4 @@
-package com.katabanking.corebanking;
+package com.katabanking.corebanking.features;
 
 
 import com.katabanking.corebanking.domain.Account;
@@ -12,10 +12,13 @@ public class DepositFeatureStepdefs {
 
     Account account;
     int accountBalanceBeforeDeposit;
-    @Given("a bank client Account")
+    int accountOperationsBeforeDeposit;
+
+    @Given("a bank client Account to make a deposit")
     public void a_bank_client_Account() {
         account=new Account();
         accountBalanceBeforeDeposit=account.getBalance();
+        accountOperationsBeforeDeposit=account.getOperations().size();
 
     }
 
@@ -26,8 +29,9 @@ public class DepositFeatureStepdefs {
 
     @Then("the Account is credited with the given (.*) of Money")
     public void the_Account_is_credited_with_the_given_amount_of_Money(String amount) {
-        int i=Integer.valueOf(amount);
-        assertEquals(i,account.getBalance()-accountBalanceBeforeDeposit);
+        int iAmount=Integer.valueOf(amount);
+        assertEquals(accountOperationsBeforeDeposit,account.getOperations().size()-1);
+        assertEquals(iAmount,account.getBalance()-accountBalanceBeforeDeposit);
 
     }
 

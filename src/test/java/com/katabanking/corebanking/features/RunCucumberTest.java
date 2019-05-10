@@ -1,4 +1,4 @@
-package com.katabanking.corebanking;
+package com.katabanking.corebanking.features;
 
 
 import cucumber.api.junit.Cucumber;
